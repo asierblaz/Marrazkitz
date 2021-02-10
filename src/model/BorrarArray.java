@@ -22,13 +22,14 @@ import java.util.Collections;
 public class BorrarArray {
 
     public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-      ArrayList<Jokalaria> jokalariak = new ArrayList<>();
+        ArrayList<Jokalaria> jokalariak = new ArrayList<>();
 
-        jokalariak.add(new Jokalaria("ASIER", -30, "2"));
-        
-       
+        jokalariak.add(new Jokalaria("Asier", 520, "10"));
+        jokalariak.add(new Jokalaria("Julen", 300, "8"));
+        jokalariak.add(new Jokalaria("Ana", 0, "0"));
+        jokalariak.add(new Jokalaria("Raul", 620, "16"));
 
-        FileOutputStream fout = new FileOutputStream("src/resources/output.txt");
+        FileOutputStream fout = new FileOutputStream("src/resources/.txt");
         ObjectOutputStream out = new ObjectOutputStream(fout);
         out.writeObject(jokalariak);
         out.close();
@@ -36,16 +37,11 @@ public class BorrarArray {
         FileInputStream fin = new FileInputStream("src/resources/output.txt");
         ObjectInputStream ois = new ObjectInputStream(fin);
         ArrayList<Jokalaria> jokalariak2 = (ArrayList<Jokalaria>) ois.readObject();
-      
-        
+
         System.out.println(jokalariak2);
         System.out.println("ordenado");
-       
-        
+
         System.out.println(jokalariak2);
-        
-        
-        
 
     }
 }

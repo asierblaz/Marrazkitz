@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import model.Jokalaria;
 
 /**
@@ -26,11 +27,19 @@ public class PuntuazioaGUI extends javax.swing.JFrame {
 
     ArrayList<Jokalaria> players;
 
+    DefaultTableModel modelo;
+
     /**
      * Creates new form PuntuazioaGUI
      */
     public PuntuazioaGUI() {
         initComponents();
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Posizioa");
+        modelo.addColumn("Erabiltzaile Izena");
+        modelo.addColumn("Puntuazioa");
+        modelo.addColumn("Asmatutakoak");
+        this.tabla.setModel(modelo);
         datuakKargatu();
 
     }
@@ -57,16 +66,26 @@ public class PuntuazioaGUI extends javax.swing.JFrame {
 
         try {
             players = itzuli();
-           
-           Collections.sort(players);
+
+            Collections.sort(players);
         } catch (Exception e) {
         }
         
-        
-        for(Jokalaria j: players){
-            String s = "\nIZENA: "+ j.getUsername()+ "         PUNTUAZIOA: "+ j.getPuntuazioa()+"        ASMATUTAKOAK:  "+ j.getAsmatutakoak();
-        
-            System.out.println(s);
+        Primerolabel.setText(players.get(0).getUsername().toUpperCase());
+        segundoLabel.setText(players.get(1).getUsername().toUpperCase());
+        tercerolabel.setText(players.get(2).getUsername().toUpperCase());
+
+        String[] info = new String[4];
+        int i = 0;
+        for (Jokalaria j : players) {
+
+            info[0] = i + 1 + "";
+            info[1] = j.getUsername();
+            info[2] = j.getPuntuazioa()+"";
+            info[3] = j.getAsmatutakoak();
+            modelo.addRow(info);
+            i++;
+
         }
         System.out.println(players);
     }
@@ -76,27 +95,24 @@ public class PuntuazioaGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        puntuLabel = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        segundoLabel = new javax.swing.JLabel();
+        tercerolabel = new javax.swing.JLabel();
+        Primerolabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Puntuazioa");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 120, 60));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 120, 60));
 
-        puntuLabel.setColumns(20);
-        puntuLabel.setRows(5);
-        jScrollPane1.setViewportView(puntuLabel);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 510, 390, 120));
-
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
@@ -105,9 +121,21 @@ public class PuntuazioaGUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tabla);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 790, 290));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 790, 260));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/podio.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 440, 160));
+
+        segundoLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(segundoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
+
+        tercerolabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(tercerolabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, -1, -1));
+
+        Primerolabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(Primerolabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -145,10 +173,12 @@ public class PuntuazioaGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Primerolabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea puntuLabel;
+    private javax.swing.JLabel segundoLabel;
+    private javax.swing.JTable tabla;
+    private javax.swing.JLabel tercerolabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -203,6 +203,7 @@ public class AsmatuGUI extends javax.swing.JFrame {
         timeLabel = new java.awt.Label();
         pistaLabel = new javax.swing.JLabel();
         puntuazioLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 153));
@@ -278,6 +279,9 @@ public class AsmatuGUI extends javax.swing.JFrame {
         puntuazioLabel.setText("Puntuazioa: 0");
         getContentPane().add(puntuazioLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 830, 280, 50));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1430, 920));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void palabraIntroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_palabraIntroActionPerformed
@@ -345,6 +349,7 @@ public class AsmatuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel argazkia;
     private javax.swing.JButton cambiar;
     private javax.swing.JButton frogatu;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelOkerra;
     private javax.swing.JLabel labelzuzena;
     private javax.swing.JTextField palabraIntro;

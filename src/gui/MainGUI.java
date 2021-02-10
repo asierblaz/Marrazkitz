@@ -61,34 +61,35 @@ public class MainGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        marraztuButton.setText("MARRAZTU");
+        marraztuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/marraztu.png"))); // NOI18N
         marraztuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 marraztuButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(marraztuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 200, 110));
+        getContentPane().add(marraztuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 280, 300));
 
-        asmatuButton.setText("ASMATU");
+        asmatuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/asmatu.png"))); // NOI18N
         asmatuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 asmatuButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(asmatuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, 200, 110));
+        getContentPane().add(asmatuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, 270, 300));
 
         titulolabel.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
         titulolabel.setForeground(new java.awt.Color(0, 51, 255));
-        titulolabel.setText("MARRAZKILLO");
-        getContentPane().add(titulolabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 440, 90));
+        titulolabel.setText("MARRAZKITZ");
+        getContentPane().add(titulolabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 440, 90));
 
+        puntuazioaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/puntuazioa.png"))); // NOI18N
         puntuazioaButton.setText("Puntuazioa");
         puntuazioaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 puntuazioaButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(puntuazioaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 200, 110));
+        getContentPane().add(puntuazioaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 240, 140));
 
         fondolabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/58930.jpg"))); // NOI18N
         getContentPane().add(fondolabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 600));
