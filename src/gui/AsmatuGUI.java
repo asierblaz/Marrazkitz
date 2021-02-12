@@ -63,7 +63,7 @@ public class AsmatuGUI extends javax.swing.JFrame {
         } else {
 
             argazkia.setIcon(new javax.swing.ImageIcon(getClass().getResource(MainGUI.marrazkiak.get(aleatorio).getImagen())));
-            cambiar.setVisible(false);
+           // cambiar.setVisible(false); //Activar cuando no haya pruebas que hacer.
             labelzuzena.setVisible(false);
             labelOkerra.setVisible(false);
             palabraIntro.setText("");
