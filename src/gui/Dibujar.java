@@ -96,7 +96,7 @@ public class Dibujar extends JComponent {
             try {
 
             ImageIO.write(bufImage, "png", new File("build/classes/img/" + m.getArgazkiIzena() + ".png"));
-           // ImageIO.write(bufImage, "png", new File("src/img/" + m.getArgazkiIzena() + ".png"));
+         ImageIO.write(bufImage, "png", new File("src/img/" + m.getArgazkiIzena() + ".png"));
 
         } catch (IOException e) {
             System.out.println("Error de escritura");

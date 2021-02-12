@@ -6,6 +6,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Frame;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JColorChooser;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -190,17 +193,22 @@ public class MarraztuGUI extends javax.swing.JFrame {
         int input = showConfirmDialog(null, " Marrazkia Gorde nahi duzu");
 
         if (input == 0) {
-            String izena = JOptionPane.showInputDialog("Zer da marraztu duzuna?:");
-            String imagen = JOptionPane.showInputDialog("Zein izena jarriko diozu?:");
-
-            Marrazkia m = new Marrazkia(1, izena, imagen);
-            System.out.println(m);
-            lienzo.save(m);
-            MainGUI.marrazkiak.add(m);
-            System.out.println(MainGUI.marrazkiak);
-            JOptionPane.showMessageDialog(null, "Marrazkia Gorde da", "Informazioa", JOptionPane.INFORMATION_MESSAGE);
-            this.dispose();
-            frame.dispose();
+            try {
+                String izena = JOptionPane.showInputDialog("Zer da marraztu duzuna?:");
+                String imagen = JOptionPane.showInputDialog("Zein izena jarriko diozu?:");
+                
+                Marrazkia m = new Marrazkia(1, izena, imagen);
+                System.out.println(m);
+                lienzo.save(m);
+                MainGUI.marrazkiak.add(m);
+                MainGUI.gorde(MainGUI.marrazkiak);
+                System.out.println(MainGUI.marrazkiak);
+                JOptionPane.showMessageDialog(null, "Marrazkia Gorde da", "Informazioa", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+                frame.dispose();
+            } catch (IOException ex) {
+                Logger.getLogger(MarraztuGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
         }
 

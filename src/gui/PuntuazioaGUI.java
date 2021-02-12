@@ -39,11 +39,13 @@ public class PuntuazioaGUI extends javax.swing.JFrame {
         modelo.addColumn("Erabiltzaile Izena");
         modelo.addColumn("Puntuazioa");
         modelo.addColumn("Asmatutakoak");
+        
         this.tabla.setModel(modelo);
         datuakKargatu();
 
     }
 
+    
     public static void gorde(ArrayList<Jokalaria> jokalariak) throws FileNotFoundException, IOException {
 
         FileOutputStream fout = new FileOutputStream("src/resources/puntuazioa.txt");
@@ -105,9 +107,9 @@ public class PuntuazioaGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setText("Puntuazioa");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 120, 60));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 250, 60));
 
         tabla.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tabla.setModel(new javax.swing.table.DefaultTableModel(

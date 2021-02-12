@@ -1,7 +1,15 @@
 package gui;
 
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import model.Jokalaria;
 import model.Marrazkia;
@@ -31,15 +39,21 @@ public class MainGUI extends javax.swing.JFrame {
     
     
     public  void sortu() {
-        int id = 0;
-        marrazkiak = new ArrayList<>();
-        marrazkiak.add(new Marrazkia(id++, "etxea", "etxea"));
-        marrazkiak.add(new Marrazkia(id++, "JAPON", "JAPON"));
-        marrazkiak.add(new Marrazkia(id++, "arraina", "arraina"));
-        marrazkiak.add(new Marrazkia(id++, "azterketa", "azterketa"));
-        marrazkiak.add(new Marrazkia(id++, "facebook", "facebook"));
-
-        
+          try {
+              int id = 0;
+              marrazkiak = new ArrayList<>();
+              /*  marrazkiak.add(new Marrazkia(id++, "etxea", "etxea"));
+              marrazkiak.add(new Marrazkia(id++, "JAPON", "JAPON"));
+              marrazkiak.add(new Marrazkia(id++, "arraina", "arraina"));
+              marrazkiak.add(new Marrazkia(id++, "azterketa", "azterketa"));
+              marrazkiak.add(new Marrazkia(id++, "facebook", "facebook"));*/
+              
+              marrazkiak= itzuli();
+          } catch (IOException ex) {
+              Logger.getLogger(MainGUI.class.getName()).log(Level.SEVERE, null, ex);
+          } catch (ClassNotFoundException ex) {
+              Logger.getLogger(MainGUI.class.getName()).log(Level.SEVERE, null, ex);
+          }
        
        
     }
@@ -56,7 +70,8 @@ public class MainGUI extends javax.swing.JFrame {
         asmatuButton = new javax.swing.JButton();
         titulolabel = new javax.swing.JLabel();
         puntuazioaButton = new javax.swing.JButton();
-        fondolabel = new javax.swing.JLabel();
+        pintura = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,10 +92,10 @@ public class MainGUI extends javax.swing.JFrame {
         });
         getContentPane().add(asmatuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, 270, 300));
 
-        titulolabel.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
+        titulolabel.setFont(new java.awt.Font("Comic Sans MS", 0, 58)); // NOI18N
         titulolabel.setForeground(new java.awt.Color(0, 51, 255));
         titulolabel.setText("MARRAZKITZ");
-        getContentPane().add(titulolabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 440, 90));
+        getContentPane().add(titulolabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 440, 90));
 
         puntuazioaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/puntuazioa.png"))); // NOI18N
         puntuazioaButton.setText("Puntuazioa");
@@ -91,8 +106,9 @@ public class MainGUI extends javax.swing.JFrame {
         });
         getContentPane().add(puntuazioaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 240, 140));
 
-        fondolabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/58930.jpg"))); // NOI18N
-        getContentPane().add(fondolabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 600));
+        pintura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pintura.png"))); // NOI18N
+        getContentPane().add(pintura, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 460, 180));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 260, 40, 10));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,6 +133,23 @@ public class MainGUI extends javax.swing.JFrame {
         entrar.setVisible(true);
     }//GEN-LAST:event_puntuazioaButtonActionPerformed
 
+public static void gorde(ArrayList<Marrazkia> marrazkiak) throws FileNotFoundException, IOException {
+
+        FileOutputStream fout = new FileOutputStream("src/resources/marraz.txt");
+        ObjectOutputStream out = new ObjectOutputStream(fout);
+        out.writeObject(marrazkiak);
+        out.close();
+    }
+
+ public static ArrayList<Marrazkia> itzuli() throws FileNotFoundException, IOException, ClassNotFoundException {
+
+        FileInputStream fin = new FileInputStream("src/resources/marraz.txt");
+        ObjectInputStream ois = new ObjectInputStream(fin);
+        ArrayList<Marrazkia> marrazkiak2 = (ArrayList<Marrazkia>) ois.readObject();
+
+        return marrazkiak2;
+
+    }
     /**
      * @param args the command line arguments
      */
@@ -154,8 +187,9 @@ public class MainGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton asmatuButton;
-    private javax.swing.JLabel fondolabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton marraztuButton;
+    private javax.swing.JLabel pintura;
     private javax.swing.JButton puntuazioaButton;
     private javax.swing.JLabel titulolabel;
     // End of variables declaration//GEN-END:variables

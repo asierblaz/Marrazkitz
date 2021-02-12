@@ -5,6 +5,8 @@
  */
 package model;
 
+import gui.MainGUI;
+import gui.PuntuazioaGUI;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -19,11 +21,11 @@ import java.util.Collections;
  *
  * @author blazg
  */
-public class BorrarArray {
+public class Inicializar {
 
     public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
         ArrayList<Jokalaria> jokalariak = new ArrayList<>();
-
+/*
         jokalariak.add(new Jokalaria("Asier", 520, "10"));
         jokalariak.add(new Jokalaria("Julen", 300, "8"));
         jokalariak.add(new Jokalaria("Ana", 0, "0"));
@@ -42,6 +44,27 @@ public class BorrarArray {
         System.out.println("ordenado");
 
         System.out.println(jokalariak2);
+        
+        
+        */
+        ArrayList<Marrazkia> marrazkiak = new ArrayList<>();
+              int id = 0;
+        
+         marrazkiak.add(new Marrazkia(id++, "etxea", "etxea"));
+              marrazkiak.add(new Marrazkia(id++, "JAPON", "JAPON"));
+              marrazkiak.add(new Marrazkia(id++, "arraina", "arraina"));
+              marrazkiak.add(new Marrazkia(id++, "azterketa", "azterketa"));
+              marrazkiak.add(new Marrazkia(id++, "facebook", "facebook"));
+              
+         jokalariak.add(new Jokalaria("Asier", 520, "10"));
+        jokalariak.add(new Jokalaria("Julen", 300, "8"));
+        jokalariak.add(new Jokalaria("Ana", 0, "0"));
+        jokalariak.add(new Jokalaria("Raul", 620, "16"));
+        
+        
+        PuntuazioaGUI.gorde(jokalariak);
+        
+           //   MainGUI.gorde(marrazkiak);
 
     }
 }

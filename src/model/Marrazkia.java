@@ -1,5 +1,7 @@
 package model;
 
+import java.io.Serializable;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,7 +12,7 @@ package model;
  *
  * @author blazquez.asier
  */
-public class Marrazkia {
+public class Marrazkia implements Serializable{
     private int id;
     private String izena;
     private String imagen; //        prueba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img1.jpg")));  argazkia imprimatzeko
