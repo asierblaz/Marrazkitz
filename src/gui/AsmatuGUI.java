@@ -63,7 +63,7 @@ public class AsmatuGUI extends javax.swing.JFrame {
         } else {
 
             argazkia.setIcon(new javax.swing.ImageIcon(getClass().getResource(MainGUI.marrazkiak.get(aleatorio).getImagen())));
-           // cambiar.setVisible(false); //Activar cuando no haya pruebas que hacer.
+           cambiar.setVisible(false); //Activar cuando no haya pruebas que hacer.
             labelzuzena.setVisible(false);
             labelOkerra.setVisible(false);
             palabraIntro.setText("");
@@ -172,6 +172,7 @@ public class AsmatuGUI extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Partida amaituta", "Informazioa", JOptionPane.INFORMATION_MESSAGE);
         timeLabel.setVisible(false);
         cambiar.setVisible(false);
+        timer.stop();
 
         int input = showConfirmDialog(null, "Zure Puntuazioa Gorde nahi duzu?");
         if (input == 0) {

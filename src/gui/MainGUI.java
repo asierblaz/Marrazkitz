@@ -34,6 +34,7 @@ public class MainGUI extends javax.swing.JFrame {
         initComponents();
         sortu();
         this.setResizable(false);
+        adminButton.setVisible(false);
     }
 
     
@@ -42,11 +43,7 @@ public class MainGUI extends javax.swing.JFrame {
           try {
               int id = 0;
               marrazkiak = new ArrayList<>();
-              /*  marrazkiak.add(new Marrazkia(id++, "etxea", "etxea"));
-              marrazkiak.add(new Marrazkia(id++, "JAPON", "JAPON"));
-              marrazkiak.add(new Marrazkia(id++, "arraina", "arraina"));
-              marrazkiak.add(new Marrazkia(id++, "azterketa", "azterketa"));
-              marrazkiak.add(new Marrazkia(id++, "facebook", "facebook"));*/
+              
               
               marrazkiak= itzuli();
           } catch (IOException ex) {
@@ -72,6 +69,7 @@ public class MainGUI extends javax.swing.JFrame {
         puntuazioaButton = new javax.swing.JButton();
         pintura = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        adminButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -110,6 +108,14 @@ public class MainGUI extends javax.swing.JFrame {
         getContentPane().add(pintura, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 460, 180));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 260, 40, 10));
 
+        adminButton.setText("Administrazioa");
+        adminButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -132,6 +138,12 @@ public class MainGUI extends javax.swing.JFrame {
               JFrame entrar = new PuntuazioaGUI();
         entrar.setVisible(true);
     }//GEN-LAST:event_puntuazioaButtonActionPerformed
+
+    private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
+      
+           JFrame entrar = new AdministrazioaGUI();
+        entrar.setVisible(true);
+    }//GEN-LAST:event_adminButtonActionPerformed
 
 public static void gorde(ArrayList<Marrazkia> marrazkiak) throws FileNotFoundException, IOException {
 
@@ -186,6 +198,7 @@ public static void gorde(ArrayList<Marrazkia> marrazkiak) throws FileNotFoundExc
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton adminButton;
     private javax.swing.JButton asmatuButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton marraztuButton;

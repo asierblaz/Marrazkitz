@@ -1,5 +1,6 @@
 package gui;
 
+import predet.Dibujar;
 import model.Marrazkia;
 import gui.MainGUI;
 import java.awt.BorderLayout;

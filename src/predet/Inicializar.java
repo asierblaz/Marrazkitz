@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package predet;
 
 import gui.MainGUI;
 import gui.PuntuazioaGUI;
@@ -16,6 +16,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import model.Jokalaria;
 
 /**
  *
@@ -25,18 +26,18 @@ public class Inicializar {
 
     public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
         ArrayList<Jokalaria> jokalariak = new ArrayList<>();
-/*
+
         jokalariak.add(new Jokalaria("Asier", 520, "10"));
         jokalariak.add(new Jokalaria("Julen", 300, "8"));
         jokalariak.add(new Jokalaria("Ana", 0, "0"));
         jokalariak.add(new Jokalaria("Raul", 620, "16"));
 
-        FileOutputStream fout = new FileOutputStream("src/resources/.txt");
+        FileOutputStream fout = new FileOutputStream("src/resources/puntuazioa.txt");
         ObjectOutputStream out = new ObjectOutputStream(fout);
         out.writeObject(jokalariak);
         out.close();
 
-        FileInputStream fin = new FileInputStream("src/resources/output.txt");
+        FileInputStream fin = new FileInputStream("src/resources/puntuazioa.txt");
         ObjectInputStream ois = new ObjectInputStream(fin);
         ArrayList<Jokalaria> jokalariak2 = (ArrayList<Jokalaria>) ois.readObject();
 
@@ -46,9 +47,11 @@ public class Inicializar {
         System.out.println(jokalariak2);
         
         
-        */
+       /* 
         ArrayList<Marrazkia> marrazkiak = new ArrayList<>();
               int id = 0;
+              
+              
         
          marrazkiak.add(new Marrazkia(id++, "etxea", "etxea"));
               marrazkiak.add(new Marrazkia(id++, "JAPON", "JAPON"));
@@ -64,7 +67,7 @@ public class Inicializar {
         
         PuntuazioaGUI.gorde(jokalariak);
         
-           //   MainGUI.gorde(marrazkiak);
+           MainGUI.gorde(marrazkiak);*/
 
     }
 }

@@ -1,4 +1,4 @@
-package gui;
+package predet;
 
 import model.Marrazkia;
 import java.awt.BasicStroke;
@@ -23,15 +23,15 @@ public class Dibujar extends JComponent {
 
     private Graphics2D g2; // declaracion de graficos
 
-    private int currentX, currentY, oldX, oldY; // la x actual y la vieja
+    private int nuevaX, nuevaY, viejaX, viejaY; // la x actual y la vieja
 
     public Dibujar() {
         setDoubleBuffered(false);
         addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 // save coord x,y when mouse is pressed
-                oldX = e.getX();
-                oldY = e.getY();
+                viejaX = e.getX();
+                viejaY = e.getY();
 
             }
         });
@@ -39,17 +39,17 @@ public class Dibujar extends JComponent {
         addMouseMotionListener(new MouseMotionAdapter() {
             public void mouseDragged(MouseEvent e) {
 
-                currentX = e.getX();
-                currentY = e.getY();
+                nuevaX = e.getX();
+                nuevaY = e.getY();
 
                 if (g2 != null) {
 
-                    g2.drawLine(oldX, oldY, currentX, currentY);
+                    g2.drawLine(viejaX, viejaY, nuevaX, nuevaY);
 
                     repaint();
 
-                    oldX = currentX;
-                    oldY = currentY;
+                    viejaX = nuevaX;
+                    viejaY = nuevaY;
                 }
             }
         });

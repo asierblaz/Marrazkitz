@@ -35,10 +35,6 @@ public class Jokalaria implements Serializable, Comparable<Jokalaria> {
         return asmatutakoak;
     }
 
-    public void ordenatu() {
-
-        System.out.println("hola");
-    }
 
     @Override
     public String toString() {
