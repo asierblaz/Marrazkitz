@@ -35,4 +35,6 @@ Jokura jolastu eta puntuazioa gorde duten jokalari guztien datuak agertuko dira 
 
 ![Alt text](https://media.discordapp.net/attachments/805837040566534207/814031989669494794/Marrazkitz.png?width=1046&height=610 "Optional title")
 
+## ASMATU FUNTZIONALITATEAREN AKTIBITATE DIAGRAMA
 
+https://media.discordapp.net/attachments/805837040566534207/814057090960195614/Asmatu.png?width=771&height=610
