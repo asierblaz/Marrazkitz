@@ -26,3 +26,12 @@ DENBORA <10 --> -20
 
 ## 4. PUNTUAZIOA IKUSI
 Jokura jolastu eta puntuazioa gorde duten jokalari guztien datuak agertuko dira puntuazioaren arabera ordenatuta ( Izena, puntuazioa , Asmatutakoak) 
+
+![Alt text](https://media.discordapp.net/attachments/805837040566534207/814031004267315200/unknown.png?width=815&height=610 "Optional title")
+
+
+# PROIEKTUAREN DIAGRAMA
+
+![Alt text](https://media.discordapp.net/attachments/805837040566534207/814031989669494794/Marrazkitz.png?width=1046&height=610 "Optional title")
+
+
