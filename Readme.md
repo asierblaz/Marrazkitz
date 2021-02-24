@@ -37,6 +37,6 @@ Jokura jolastu eta puntuazioa gorde duten jokalari guztien datuak agertuko dira 
 
 ## ASMATU FUNTZIONALITATEAREN AKTIBITATE DIAGRAMA
 
-![Alt text](https://media.discordapp.net/attachments/805837040566534207/814057090960195614/Asmatu.png?width=771&height=610
+![Alt text](https://media.discordapp.net/attachments/805837040566534207/814058114721906728/Asmatu.png?width=719&height=569
  "Optional title")
 
