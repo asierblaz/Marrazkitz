@@ -274,7 +274,7 @@ public class AsmatuGUI extends javax.swing.JFrame {
         pistaLabel.setVisible(false);
         pistaLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         pistaLabel.setText("_ _ _ _ _ _ _ _ _ _ _");
-        getContentPane().add(pistaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 350, 60));
+        getContentPane().add(pistaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 550, 60));
 
         puntuazioLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         puntuazioLabel.setText("Puntuazioa: 0");
