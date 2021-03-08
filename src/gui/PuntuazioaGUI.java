@@ -41,6 +41,7 @@ public class PuntuazioaGUI extends javax.swing.JFrame {
         modelo.addColumn("Asmatutakoak");
         
         this.tabla.setModel(modelo);
+        tabla.setEnabled(false);
         datuakKargatu();
 
     }
